@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Desktop Navigation */}
               <nav className="hidden md:flex items-center space-x-1">
                 <a 
-                  href="#" 
+                  href="/" 
                   className="flex items-center space-x-2 px-4 py-2 rounded-lg hover:bg-blue-50 transition text-gray-700 hover:text-blue-600 font-medium"
                 >
                   <Home size={18} />
