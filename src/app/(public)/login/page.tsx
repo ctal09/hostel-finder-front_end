@@ -19,7 +19,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-600 via-red-500 to-orange-400 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-purple-600 via-red-500 to-orange-400 flex items-center justify-center p-4 overflow-x-hidden">
       <div className="absolute inset-0 bg-black opacity-20"></div>
       
       <div className="relative w-full max-w-md">
@@ -29,7 +29,7 @@ export default function LoginPage() {
         
         <div className="relative backdrop-blur-lg bg-white/90 rounded-2xl shadow-2xl p-8">
           <div className="text-center mb-8">
-            <div className="inline-block p-3 bg-gradient-to-br from-purple-600 to-pink-500 rounded-2xl mb-4">
+            <div className="inline-block p-3 bg-linear-to-br from-purple-600 to-pink-500 rounded-2xl mb-4">
               <Lock className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
@@ -94,7 +94,7 @@ export default function LoginPage() {
             <button
               onClick={handleSubmit}
               disabled={isLoading}
-              className="w-full bg-gradient-to-r from-purple-600 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-600 transform hover:scale-[1.02] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-linear-to-r from-purple-600 to-pink-500 text-white py-3 rounded-lg font-semibold hover:from-purple-700 hover:to-pink-600 transform hover:scale-[1.02] transition-all shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isLoading ? (
                 <span className="flex items-center justify-center">
@@ -144,24 +144,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes blob {
-          0% { transform: translate(0px, 0px) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-          100% { transform: translate(0px, 0px) scale(1); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-        .animation-delay-2000 {
-          animation-delay: 2s;
-        }
-        .animation-delay-4000 {
-          animation-delay: 4s;
-        }
-      `}</style>
     </div>
   );
 }
