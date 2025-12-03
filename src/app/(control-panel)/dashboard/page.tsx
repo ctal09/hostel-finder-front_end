@@ -154,7 +154,7 @@ export default function ControlPanel() {
   ];
 
   return <>
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 to-slate-100">
       {/* Top Navigation */}
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -167,10 +167,10 @@ export default function ControlPanel() {
                 <Menu size={24} />
               </button>
               <div className="flex items-center ml-4 md:ml-0">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-linear-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
                   <LayoutDashboard className="text-white" size={24} />
                 </div>
-                <span className="ml-3 text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                <span className="ml-3 text-xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                   Control Panel
                 </span>
               </div>
@@ -189,7 +189,7 @@ export default function ControlPanel() {
                 <Bell size={20} />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
               </button>
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
+              <div className="w-10 h-10 bg-linear-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold">
                 AD
               </div>
             </div>
@@ -228,7 +228,7 @@ export default function ControlPanel() {
             {/* Occupancy Chart Placeholder */}
             <div className="bg-white rounded-xl shadow-md p-6">
               <h2 className="text-xl font-bold mb-4 text-gray-800">Occupancy Overview</h2>
-              <div className="h-64 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center">
+              <div className="h-64 bg-linear-to-br from-blue-50 to-purple-50 rounded-lg flex items-center justify-center">
                 <div className="text-center">
                   <BarChart3 size={48} className="mx-auto text-blue-600 mb-2" />
                   <p className="text-gray-600">Chart visualization would go here</p>
