@@ -54,7 +54,7 @@ export default function Header() {
                 <span>Contact</span>
               </a>
               <Link
-                href="/login"
+                href="/auth/login"
                 className="ml-4 px-6 py-2 bg-linear-to-r from-blue-600 to-purple-600 
              text-white rounded-lg font-semibold hover:shadow-lg 
              transition transform hover:scale-105"

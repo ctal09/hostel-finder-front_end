@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 import Link from 'next/link';
+import "@/app/globals.css";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
