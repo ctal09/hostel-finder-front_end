@@ -11,7 +11,6 @@ import {
   Building2,
   Mail,
 } from "lucide-react";
-import Header from "@/components/Header";
 
 interface ControlPanelLayoutProps {
   children: ReactNode;
@@ -20,7 +19,7 @@ interface ControlPanelLayoutProps {
 export default function authLayout({ children }: ControlPanelLayoutProps) {
   return (
     <>
-      <Header />
+      
 
       {/* Main Content */}
       <main className="min-h-screen">{children}</main>

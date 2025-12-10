@@ -105,11 +105,9 @@ console.log(status);
                 <Mail size={18} />
                 <span>Contact</span>
               </a>
-              <a>sdakjdkj</a>
-              <div>
-                status
-              </div>
-            
+              <button className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
+                Get Started
+              </button>
             </nav>
           </div>
         </div>
