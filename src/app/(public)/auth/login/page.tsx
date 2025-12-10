@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import Link from "next/link";
 import "@/app/globals.css";
-import { loginUser } from "@/app/api/auth/login/route";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -14,18 +14,27 @@ export default function LoginPage() {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    const formData = {
-      email,
-      password,
-    };
 
     try {
-      const data = await loginUser(formData); // make sure loginUser returns a Promise
-      console.log("Logged in user:", data);
-      // Redirect or store token here
-    } catch (err: any) {
+      // Use NextAuth credentials provider
+      const res = await signIn("credentials", {
+        redirect: false, // handle redirection manually
+        email,
+        password,
+      });
+
+      if (res?.error) {
+        console.error("Login failed:", res.error);
+        alert(res.error);
+      } else {
+        console.log("Logged in successfully!");
+        alert("Logged in successfully!");
+        // Optional: redirect manually
+        // router.push("/dashboard");
+      }
+    } catch (err) {
       console.error("Login failed:", err);
-      alert(err.detail || "Login failed!");
+      alert("Login failed!");
     } finally {
       setIsLoading(false);
     }

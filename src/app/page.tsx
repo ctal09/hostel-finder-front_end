@@ -1,10 +1,17 @@
+"use client";
+
+import { SessionProvider } from "next-auth/react";
 import { Building2, Users, Bed, Mail, CheckCircle, MapPin } from "lucide-react";
 import RoomCard from "@/components/RoomCard";
 import FeatureCard from "@/components/FeatureCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useSession } from "next-auth/react";
 
-export default function HomePage() {
+ function HomePageContent() {
+  const { data : session, status} = useSession();
+  console.log("SESSION===> ", session , "STatus ====>", status);
+
   const rooms = [
     {
       block: "Block A",
@@ -157,31 +164,19 @@ export default function HomePage() {
                 <h3 className="text-2xl font-bold mb-4">Key Features</h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <CheckCircle
-                      className="mr-2 mt-1 shrink-0"
-                      size={20}
-                    />
+                    <CheckCircle className="mr-2 mt-1 shrink-0" size={20} />
                     <span>Real-time room availability tracking</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle
-                      className="mr-2 mt-1 shrink-0"
-                      size={20}
-                    />
+                    <CheckCircle className="mr-2 mt-1 shrink-0" size={20} />
                     <span>Smart allocation algorithms</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle
-                      className="mr-2 mt-1 shrink-0"
-                      size={20}
-                    />
+                    <CheckCircle className="mr-2 mt-1 shrink-0" size={20} />
                     <span>User-friendly dashboard interface</span>
                   </li>
                   <li className="flex items-start">
-                    <CheckCircle
-                      className="mr-2 mt-1 shrink-0"
-                      size={20}
-                    />
+                    <CheckCircle className="mr-2 mt-1 shrink-0" size={20} />
                     <span>Comprehensive room information</span>
                   </li>
                 </ul>
@@ -210,5 +205,13 @@ export default function HomePage() {
       </div>
       <Footer />
     </>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <SessionProvider>
+      <HomePageContent />
+    </SessionProvider>
   );
 }
