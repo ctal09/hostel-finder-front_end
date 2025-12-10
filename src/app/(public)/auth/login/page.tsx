@@ -4,14 +4,17 @@ import { useState } from "react";
 import { Eye, EyeOff, Mail, Lock } from "lucide-react";
 import Link from "next/link";
 import "@/app/globals.css";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const router = useRouter();
   const handleSubmit = async () => {
     setIsLoading(true);
 
@@ -30,7 +33,7 @@ export default function LoginPage() {
         console.log("Logged in successfully!");
         alert("Logged in successfully!");
         // Optional: redirect manually
-        // router.push("/dashboard");
+        router.push("/");
       }
     } catch (err) {
       console.error("Login failed:", err);

@@ -1,8 +1,13 @@
-import { Building2, Home, Info, Mail,Menu,  } from "lucide-react";
+
+import { Building2, Home, Info, Mail, Menu } from "lucide-react";
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
-
 export default function Header() {
+ const { data:session, status} = useSession();
+ console.log(session);
+console.log(status);
+
   return (
     <>
       <header className="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
@@ -100,9 +105,11 @@ export default function Header() {
                 <Mail size={18} />
                 <span>Contact</span>
               </a>
-              <button className="px-6 py-3 bg-linear-to-r from-blue-600 to-purple-600 text-white rounded-lg font-semibold hover:shadow-lg transition">
-                Get Started
-              </button>
+              <a>sdakjdkj</a>
+              <div>
+                status
+              </div>
+            
             </nav>
           </div>
         </div>

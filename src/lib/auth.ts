@@ -59,8 +59,6 @@ export const authOptions: NextAuthOptions = {
         token.role = user.role;
         token.token = user.token; // DRF token
       }
-      console.log("USERR +++++++> ", user);
-      console.log("TOKEN +=======> ", token);
       return token;
     },
 

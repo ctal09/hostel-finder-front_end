@@ -1,7 +1,7 @@
 // app/layout.tsx
 
 import "./globals.css";
-import { Home, Building2, Info, Mail, Menu, X } from "lucide-react";
+import SessionProviderWrapper from "./providers/SessionProviderWrapper";
 
 export const metadata = {
   title: "Smart Hostel Finder - Find Your Perfect Room",
@@ -17,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-linear-to-br from-blue-50 via-indigo-50 to-purple-50 font-sans antialiased">
-        <main>{children}</main>
+        <SessionProviderWrapper>
+          <main>{children}</main>
+        </SessionProviderWrapper>
       </body>
     </html>
   );

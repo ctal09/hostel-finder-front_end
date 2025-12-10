@@ -6,11 +6,9 @@ import RoomCard from "@/components/RoomCard";
 import FeatureCard from "@/components/FeatureCard";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { useSession } from "next-auth/react";
 
- function HomePageContent() {
-  const { data : session, status} = useSession();
-  console.log("SESSION===> ", session , "STatus ====>", status);
+
+ export default function HomePage() {
 
   const rooms = [
     {
@@ -205,13 +203,5 @@ import { useSession } from "next-auth/react";
       </div>
       <Footer />
     </>
-  );
-}
-
-export default function HomePage() {
-  return (
-    <SessionProvider>
-      <HomePageContent />
-    </SessionProvider>
   );
 }
